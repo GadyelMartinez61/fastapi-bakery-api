@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, PositiveFloat, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class BranchCreate(BaseModel):
