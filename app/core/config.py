@@ -7,10 +7,10 @@ class Settings(BaseSettings):
     project: str = "fast-api-backery"
     region: str = "us-east-1"
 
-    products_table: str = "Products"
-    branches_table: str = "Branches"
-    sales_table: str = "Sales"
-    users_table: str = "Users"
+    products_table: str = f"fast-api-products-{environment}"
+    branches_table: str = f"fast-api-branches-{environment}"
+    sales_table: str = f"fast-api-sales-{environment}"
+    users_table: str = f"fast-api-users-{environment}"
 
     jwt_secret: str = get_parameter(f"{project}-{environment}/jwt_secret")
     jwt_algorithm: str = "HS256"
