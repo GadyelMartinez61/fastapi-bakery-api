@@ -33,6 +33,18 @@ class BranchRepo:
 
         return item
 
+    def update(self, branch_id: str, data: dict) -> dict:
+        old_item = self.get(branch_id)
+
+        merged = {
+            **old_item,
+            **data,
+            "updated_at": datetime.now(timezone.utc).isoformat(),
+        }
+
+        DATABASE.put_item(Item=merged)
+        return merged
+
     def list(self, limit: int = 10, last_key: str | None = None) -> dict:
         kwargs = {"Limit": limit}
         if last_key:
