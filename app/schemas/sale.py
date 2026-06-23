@@ -19,6 +19,7 @@ class SaleItem(BaseModel):
 class SaleCreate(BaseModel):
     branch_id: str
     items: list[SaleItem] = Field(..., min_length=1)  # al menos 1 item
+    total: float
     payment_method: PaymentMethod
 
 

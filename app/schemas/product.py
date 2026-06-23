@@ -28,7 +28,7 @@ class ProductUpdate(BaseModel):
 
 class ProductResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)  # permite crear desde dict
-    
+
     id: str
     name: str
     description: str | None
