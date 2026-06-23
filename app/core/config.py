@@ -4,7 +4,7 @@ from ..layer.helpers import get_parameter
 
 class Settings(BaseSettings):
     environment: str = "dev"
-    project: str = "fast-api-backery"
+    project: str = "fast-api-bakery"
     region: str = "us-east-1"
 
     products_table: str = f"fast-api-products-{environment}"
